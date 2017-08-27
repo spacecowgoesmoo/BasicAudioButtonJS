@@ -17,4 +17,4 @@
 `<img id='button3' class='audioButton' onclick='playAudio("http://www.cow.com/audio3.mp3", this.id);'>`
 
 ## REAL WORLD IMPLEMENTATION
-Subpages at [taylorcalderone.com/music](www.taylorcalderone.com/music)
+Subpages at www.taylorcalderone.com/music
