@@ -7,7 +7,7 @@
 2. Set up the image sources in this JS file. Lines 27, 28
 3. Customize the CSS, if desired. Line 43
 4. `<body onload="initializeBasicAudioButtonJS();">`
-5. Add your AudioButtons to your HTML as follows. (Make sure to use absolute filepaths or pausing won't work correctly.)
+5. Add your AudioButtons to your HTML as follows. (Use absolute filepaths or pausing won't work correctly.)
 
 ## HTML USAGE EXAMPLES
 `<img id='button1' class='audioButton' onclick='playAudio("http://www.cow.com/audio1.mp3", this.id);'>`
