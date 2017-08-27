@@ -63,7 +63,7 @@ function playAudio(file, buttonID) {
 		if (audioPlayer.currentTime == 0) { audioPlayer.src = file; }
 		audioPlayer.play();
 		document.getElementById(buttonID).src = pauseButtonIMG;
-		// Add listener to revert the text once the track finishes
+		// Add listener to revert the button image once the track finishes
 		setTimeout(checkforSongEnd, 1000);
 	}
 
@@ -78,7 +78,7 @@ function playAudio(file, buttonID) {
 
 	// Forces Play if you switch between tracks
 	if (audioPlayer.src !== file) {
-		// Manually change all button texts to 'play'
+		// Manually change all button images to 'play'
 		resetAllSongButtons();
 
 		// ..and play
@@ -89,7 +89,7 @@ function playAudio(file, buttonID) {
 	}
 
 
-	// Event listener to revert the button when a song ends.
+	// Event listener to revert the button image when a song ends.
 	// The AUDIO element autopauses when this happens
 	function checkforSongEnd() {
 		if (audioPlayer.paused == true) {
