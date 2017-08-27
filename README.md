@@ -1,5 +1,7 @@
 # BasicAudioButton.js
 
+A bare bones Javascript play button with no extra UI or complications
+
 ## INSTRUCTIONS
 1. Prepare some play/pause button images
 2. Set up the image sources in this JS file. Lines 27, 28
