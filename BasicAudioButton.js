@@ -27,7 +27,7 @@
 var playButtonIMG = 'Images/play.png';
 var pauseButtonIMG = 'Images/pause.png';
 
-// Sets all audioButton images on the page to 'play'
+// Sets all button images on the page to 'play'
 function resetAllSongButtons() {
 	var elements = document.getElementsByClassName('audioButton');
 	for (var i = 0; i < elements.length; i++) {
