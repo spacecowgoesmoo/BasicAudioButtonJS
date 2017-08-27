@@ -10,11 +10,11 @@
 5. Add your AudioButtons to your HTML as follows. (Make sure to use absolute filepaths or pausing won't work correctly.)
 
 ## HTML USAGE EXAMPLES
-`<img id='button1' class='audioButton' onclick='playAudio("http://www.YourSite.com/audio1.mp3", this.id);'>`
+`<img id='button1' class='audioButton' onclick='playAudio("http://www.qqq.com/audio1.mp3", this.id);'>`
 
-`<img id='button2' class='audioButton' onclick='playAudio("http://www.YourSite.com/audio2.mp3", this.id);'>`
+`<img id='button2' class='audioButton' onclick='playAudio("http://www.qqq.com/audio2.mp3", this.id);'>`
 
-`<img id='button3' class='audioButton' onclick='playAudio("http://www.YourSite.com/audio3.mp3", this.id);'>`
+`<img id='button3' class='audioButton' onclick='playAudio("http://www.qqq.com/audio3.mp3", this.id);'>`
 
 ## REAL WORLD IMPLEMENTATION
 www.taylorcalderone.com/music
