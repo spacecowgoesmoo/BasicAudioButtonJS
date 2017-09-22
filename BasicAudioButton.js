@@ -2,9 +2,9 @@
 // © Taylor Calderone, 2017
 
 // INSTRUCTIONS
-// 1. Prepare some play/pause button images
-// 2. Set up the image sources in this JS file. Lines 27, 28
-// 3. Customize the CSS, if desired. Line 43
+// 1. Prepare some play/pause/loading button images
+// 2. Set up the image sources in this JS file. Lines 28 - 30
+// 3. Customize the CSS, if desired. Line 45
 // 4. Load the JS file in your HTML: `<script src='BasicAudioButton.js'></script>`
 // 5. Initialize the library: `<body onload="initializeBasicAudioButtonJS();">`
 // 6. Add your AudioButtons to your HTML as follows. (Use absolute filepaths or pausing won't work correctly.)
@@ -15,7 +15,7 @@
 // <img id='button3' class='audioButton' onclick='playAudio("http://www.cow.com/audio3.mp3", this.id);'>
 
 // REAL WORLD IMPLEMENTATION
-// www.taylorcalderone.com/music
+// Subpages at www.taylorcalderone.com/music
 
 
 
@@ -27,6 +27,7 @@
 // Set up button source images
 var playButtonIMG = 'Images/play.png';
 var pauseButtonIMG = 'Images/pause.png';
+var loadingButtonIMG = 'Images/loading.png';
 
 // Sets all button images on the page to 'play'
 function resetAllSongButtons() {
@@ -62,10 +63,7 @@ function playAudio(file, buttonID) {
 	if (audioPlayer.paused) {
 		// Don't reload the mp3 if the user restarts playback. This turns pause into 'restart from beginning'
 		if (audioPlayer.currentTime == 0) { audioPlayer.src = file; }
-		audioPlayer.play();
-		document.getElementById(buttonID).src = pauseButtonIMG;
-		// Add listener to revert the button image once the track finishes
-		setTimeout(checkforSongEnd, 1000);
+		play();
 	}
 
 
@@ -81,20 +79,41 @@ function playAudio(file, buttonID) {
 	if (audioPlayer.src !== file) {
 		// Manually change all button images to 'play'
 		resetAllSongButtons();
-
 		// ..and play
 		audioPlayer.src = file;
-		audioPlayer.play();
-		document.getElementById(buttonID).src = pauseButtonIMG;
-		setTimeout(checkforSongEnd, 1000);
+		play();
 	}
 
 
-	// Event listener to revert the button image when a song ends.
-	// The AUDIO element autopauses when this happens
-	function checkforSongEnd() {
+
+
+
+
+
+
+	function play() {
+		audioPlayer.play();
+		document.getElementById(buttonID).src = loadingButtonIMG;
+		// Add listener to change the button image once the track begins playing
+		checkForSongLoaded();
+		// Add listener to revert the button image once the track finishes
+		setTimeout(checkForSongEnd, 1000);
+	}
+	
+	// Event listener to change the button image when a song begins playing
+	function checkForSongLoaded() {
+		if (audioPlayer.currentTime > 0) {
+			document.getElementById(buttonID).src = pauseButtonIMG;
+			// Reverts the button if you select a new one before loading finishes
+			if (audioPlayer.src !== file) { document.getElementById(buttonID).src = playButtonIMG; }
+		} else { setTimeout(checkForSongLoaded, 200); }
+	}
+	
+	// Event listener to revert the button image when a song ends
+	// The <audio> element autopauses when this happens
+	function checkForSongEnd() {
 		if (audioPlayer.paused == true) {
 			document.getElementById(buttonID).src = playButtonIMG;
-		} else { setTimeout(checkforSongEnd, 1000); }
+		} else { setTimeout(checkForSongEnd, 1000); }
 	}
 }
