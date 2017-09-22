@@ -1,10 +1,11 @@
 // BasicAudioButton.js
 // © Taylor Calderone, 2017
+// v1.1
 
 // INSTRUCTIONS
 // 1. Prepare some play/pause/loading button images
-// 2. Set up the image sources in this JS file. Lines 28 - 30
-// 3. Customize the CSS, if desired. Line 45
+// 2. Set up the image sources in this JS file. Lines 29 - 31
+// 3. Customize the CSS, if desired. Line 46
 // 4. Load the JS file in your HTML: `<script src='BasicAudioButton.js'></script>`
 // 5. Initialize the library: `<body onload="initializeBasicAudioButtonJS();">`
 // 6. Add your AudioButtons to your HTML as follows. (Use absolute filepaths or pausing won't work correctly.)
