@@ -3,9 +3,9 @@
 A bare bones Javascript play button with no extra UI or complications
 
 ## Instructions
-1. Prepare some play/pause button images
-2. Set up the image sources in this JS file. Lines 27, 28
-3. Customize the CSS, if desired. Line 43
+1. Prepare some play/pause/loading button images
+2. Set up the image sources in this JS file. Lines 28 - 30
+3. Customize the CSS, if desired. Line 45
 4. Load the JS file in your HTML: `<script src='BasicAudioButton.js'></script>`
 5. Initialize the library: `<body onload="initializeBasicAudioButtonJS();">`
 6. Add your AudioButtons to your HTML as follows. (Use absolute filepaths or pausing won't work correctly.)
