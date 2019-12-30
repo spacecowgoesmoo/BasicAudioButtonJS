@@ -1,4 +1,5 @@
 v1.3	Moved initialization from onLoad to the js file
+		Created changelog.txt
 
 v1.2	Changed vars to const/let
 
