@@ -3,6 +3,7 @@ v1.3	Moved initialization from onLoad to the js file
 
 v1.2	Changed vars to const/let
 
-v1.1	Added a third state for while the audio file is loading
+v1.1	Added a 'audio is loading' button status
+		Added version number to the JS file
 
 v1.0	Initial Release
